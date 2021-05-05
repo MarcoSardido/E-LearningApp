@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:theme="@style/Theme.ELearningApp">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/sidenav_custom"
+        android:maxWidth="225dp"
+        android:layout_marginTop="25dp"
+        app:headerLayout="@layout/sidebar_header"
+        app:itemIconSize="25dp"
+        app:menu="@menu/main_sidebar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F0F5F9"
+            android:paddingBottom="50dp"
+            tools:context=".frm_NavAbout">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tlbUpper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#00FFFFFF"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navigationIcon="@drawable/sidebar_clicker"/>
+
+            <TextView
+                android:id="@+id/lblTitle_NavAboutUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="About Us"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tlbUpper" />
+
+            <ImageView
+                android:id="@+id/img1_NavAboutUs"
+                android:layout_width="211dp"
+                android:layout_height="140dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tlbUpper"
+                app:srcCompat="@drawable/img1_about_us" />
+
+            <TextView
+                android:id="@+id/lblTitle1_NavAboutUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="87dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Adaptive"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tlbUpper" />
+
+            <TextView
+                android:id="@+id/lblTitle2_NavAboutUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="E-Learning App"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblTitle1_NavAboutUs" />
+
+            <TextView
+                android:id="@+id/lblText1_NavAboutUs"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="is a set of techniques oriented to offer online students a personal and unique experience, with the final goal of maximizing their performance."
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img1_NavAboutUs" />
+
+            <ImageView
+                android:id="@+id/img2_NavAboutUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblText1_NavAboutUs"
+                app:srcCompat="@drawable/img2_about_us" />
+
+            <TextView
+                android:id="@+id/lblText2_NavAboutUs"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="The objective of Adaptive e-Learning is being able to capture those diferencies and"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/img2_NavAboutUs"
+                app:layout_constraintTop_toBottomOf="@+id/lblText1_NavAboutUs" />
+
+            <TextView
+                android:id="@+id/lblText3_NavAboutUs"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="translate them into contents and training processes which are relevant for each and every individual student."
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img2_NavAboutUs" />
+
+            <TextView
+                android:id="@+id/lblTitle3_NavAboutUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Meet The Team"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblText3_NavAboutUs" />
+
+            <ImageView
+                android:id="@+id/imgTeam1_NavAboutUs"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblTitle3_NavAboutUs"
+                app:srcCompat="@drawable/avatar1" />
+
+            <TextView
+                android:id="@+id/lblTeamName1_NavAboutUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="MarcoSardido"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/imgTeam1_NavAboutUs"
+                app:layout_constraintTop_toBottomOf="@+id/lblTitle3_NavAboutUs" />
+
+            <TextView
+                android:id="@+id/lblTeamPos_NavAboutUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/poppins"
+                android:text="CEO/Owner"
+                android:textColor="#7A7A7A"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/imgTeam1_NavAboutUs"
+                app:layout_constraintTop_toBottomOf="@+id/lblTeamName1_NavAboutUs" />
+
+            <ImageView
+                android:id="@+id/imgTeam2_NavAboutUs"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="55dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblTeamPos_NavAboutUs"
+                app:srcCompat="@drawable/avatar2" />
+
+            <TextView
+                android:id="@+id/lblTeamName2_NavAboutUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="68dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Keith Basilio"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/imgTeam2_NavAboutUs"
+                app:layout_constraintTop_toBottomOf="@+id/lblTeamPos_NavAboutUs" />
+
+            <TextView
+                android:id="@+id/lblTeamPos2_NavAboutUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/poppins"
+                android:text="Senior Software Engineer"
+                android:textColor="#7A7A7A"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/imgTeam2_NavAboutUs"
+                app:layout_constraintTop_toBottomOf="@+id/lblTeamName2_NavAboutUs" />
+
+            <ImageView
+                android:id="@+id/imgTeam3_NavAboutUs"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="55dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblTeamPos2_NavAboutUs"
+                app:srcCompat="@drawable/avatar3" />
+
+            <TextView
+                android:id="@+id/lblTeamName3_NavAboutUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Allysa Steban"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/imgTeam3_NavAboutUs"
+                app:layout_constraintTop_toBottomOf="@+id/lblTeamPos2_NavAboutUs" />
+
+            <TextView
+                android:id="@+id/lblTeamPos3_NavAboutUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/poppins"
+                android:text="Graphic Designer"
+                android:textColor="#7A7A7A"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/imgTeam3_NavAboutUs"
+                app:layout_constraintTop_toBottomOf="@+id/lblTeamName3_NavAboutUs" />
+
+
+            <ImageView
+                android:id="@+id/imgTeam4_NavAboutUs"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="55dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblTeamPos3_NavAboutUs"
+                app:srcCompat="@drawable/avatar4" />
+
+            <TextView
+                android:id="@+id/lblTeamName4_NavAboutUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="68dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Joshua Brillantes"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/imgTeam4_NavAboutUs"
+                app:layout_constraintTop_toBottomOf="@+id/lblTeamPos3_NavAboutUs" />
+
+            <TextView
+                android:id="@+id/lblTeamPos4_NavAboutUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/poppins"
+                android:text="System Analyst"
+                android:textColor="#7A7A7A"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/imgTeam4_NavAboutUs"
+                app:layout_constraintTop_toBottomOf="@+id/lblTeamName4_NavAboutUs" />
+
+
+            <ImageView
+                android:id="@+id/imgTeam5_NavAboutUs"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="55dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblTeamPos4_NavAboutUs"
+                app:srcCompat="@drawable/avatar5" />
+
+            <TextView
+                android:id="@+id/lblTeamName5_NavAboutUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Johnley Jara"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/imgTeam5_NavAboutUs"
+                app:layout_constraintTop_toBottomOf="@+id/lblTeamPos4_NavAboutUs" />
+
+            <TextView
+                android:id="@+id/lblTeamPos5_NavAboutUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/poppins"
+                android:text="IT Specialist"
+                android:textColor="#7A7A7A"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/imgTeam5_NavAboutUs"
+                app:layout_constraintTop_toBottomOf="@+id/lblTeamName5_NavAboutUs" />
+
+
+            <ImageView
+                android:id="@+id/imgTeam6_NavAboutUs"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="55dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblTeamPos5_NavAboutUs"
+                app:srcCompat="@drawable/avatar6" />
+
+            <TextView
+                android:id="@+id/lblTeamName6_NavAboutUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="68dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Jayra Jaucian"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/imgTeam6_NavAboutUs"
+                app:layout_constraintTop_toBottomOf="@+id/lblTeamPos5_NavAboutUs" />
+
+            <TextView
+                android:id="@+id/lblTeamPos6_NavAboutUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/poppins"
+                android:text="Marketing Manager"
+                android:textColor="#7A7A7A"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/imgTeam6_NavAboutUs"
+                app:layout_constraintTop_toBottomOf="@+id/lblTeamName6_NavAboutUs" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.drawerlayout.widget.DrawerLayout>

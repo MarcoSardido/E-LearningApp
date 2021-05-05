@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_myCourses"
+            android:icon="@drawable/icon_star"
+            android:title="My Courses"/>
+
+        <item
+            android:id="@+id/nav_expCourses"
+            android:icon="@drawable/icon_bookmark"
+            android:title="Explore Courses" />
+
+        <item
+            android:id="@+id/nav_myAcc"
+            android:icon="@drawable/icon_user"
+            android:title="My Account" />
+
+        <item
+            android:id="@+id/nav_About"
+            android:icon="@drawable/icon_about"
+            android:title="About" />
+
+    </group>
+
+</menu>

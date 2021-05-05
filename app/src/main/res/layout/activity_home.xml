@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:theme="@style/Theme.ELearningApp">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/sidenav_custom"
+        android:maxWidth="225dp"
+        android:layout_marginTop="25dp"
+        app:headerLayout="@layout/sidebar_header"
+        app:itemIconSize="25dp"
+        app:menu="@menu/main_sidebar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F0F5F9"
+            android:paddingBottom="10dp"
+            tools:context=".frm_Home">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tlbUpper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="#00FFFFFF"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navigationIcon="@drawable/sidebar_clicker"/>
+
+            <ImageView
+                android:id="@+id/imgUser"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tlbUpper"
+                app:srcCompat="@drawable/user_image" />
+
+            <TextView
+                android:id="@+id/lblUser"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="35dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="MarcoSardido"
+                android:textColor="#000000"
+                android:textSize="28sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/lblTitleHome" />
+
+            <TextView
+                android:id="@+id/lblTitleHome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="Hello,"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tlbUpper" />
+
+            <ImageView
+                android:id="@+id/imgFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="22dp"
+                app:layout_constraintStart_toEndOf="@+id/txtSearchBar"
+                app:layout_constraintTop_toBottomOf="@+id/lblUser"
+                app:srcCompat="@drawable/search_filter" />
+
+            <EditText
+                android:id="@+id/txtSearchBar"
+                android:layout_width="275dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/search_home"
+                android:drawableStart="@drawable/search_logo"
+                android:drawablePadding="8dp"
+                android:ems="10"
+                android:hint="Search your course..."
+                android:importantForAutofill="no"
+                android:inputType="textNoSuggestions"
+                android:padding="10sp"
+                android:textColor="#000000"
+                android:textColorHighlight="#000000"
+                android:textColorHint="#000000"
+                android:textColorLink="#000000"
+                android:textCursorDrawable="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblUser"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/lblEnrolledCourses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Enrolled Courses"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtSearchBar" />
+
+            <HorizontalScrollView
+                android:id="@+id/scrlEnrolledCourses"
+                android:layout_width="match_parent"
+                android:layout_height="165dp"
+                android:layout_marginTop="5dp"
+                android:scrollbarSize="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblEnrolledCourses">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:scrollbarSize="2dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutC_Course1"
+                        android:layout_width="355dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imgCourse1"
+                            android:layout_width="317dp"
+                            android:layout_height="151dp"
+                            android:layout_marginStart="21dp"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/course_computer" />
+
+                        <Button
+                            android:id="@+id/btnCourse1"
+                            android:layout_width="87dp"
+                            android:layout_height="29dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="115dp"
+                            android:width="300dp"
+                            android:background="@drawable/btn_course_css"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:padding="0dp"
+                            android:paddingStart="0dp"
+                            android:paddingLeft="0dp"
+                            android:paddingTop="0dp"
+                            android:paddingEnd="0dp"
+                            android:paddingRight="0dp"
+                            android:paddingBottom="0dp"
+                            android:text="Continue"
+                            android:textAllCaps="false"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp"
+                            app:backgroundTint="@null"
+                            app:layout_constraintStart_toStartOf="@+id/imgCourse1"
+                            app:layout_constraintTop_toTopOf="@+id/imgCourse1" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:text="5/17 Lessons"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp"
+                            app:layout_constraintStart_toStartOf="@+id/imgCourse1"
+                            app:layout_constraintTop_toBottomOf="@+id/txtTitleC1" />
+
+                        <TextView
+                            android:id="@+id/txtTitleC1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="Computer Hardware"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            app:layout_constraintStart_toStartOf="@+id/imgCourse1"
+                            app:layout_constraintTop_toBottomOf="@+id/lblOngoingC1" />
+
+                        <TextView
+                            android:id="@+id/lblOngoingC1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/poppins"
+                            android:text="Ongoing"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="@+id/imgCourse1"
+                            app:layout_constraintTop_toTopOf="@+id/imgCourse1" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutC_Course2"
+                        android:layout_width="360dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imgCourse2"
+                            android:layout_width="317dp"
+                            android:layout_height="151dp"
+                            android:layout_marginStart="21dp"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/course_react" />
+
+                        <Button
+                            android:id="@+id/btnCourse2"
+                            android:layout_width="87dp"
+                            android:layout_height="29dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="115dp"
+                            android:width="300dp"
+                            android:background="@drawable/btn_course_css"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:padding="0dp"
+                            android:paddingStart="0dp"
+                            android:paddingLeft="0dp"
+                            android:paddingTop="0dp"
+                            android:paddingEnd="0dp"
+                            android:paddingRight="0dp"
+                            android:paddingBottom="0dp"
+                            android:text="Continue"
+                            android:textAllCaps="false"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp"
+                            app:backgroundTint="@null"
+                            app:layout_constraintStart_toStartOf="@+id/imgCourse2"
+                            app:layout_constraintTop_toTopOf="@+id/imgCourse2" />
+
+                        <TextView
+                            android:id="@+id/lblLessonsC2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:text="11/31 Lessons"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp"
+                            app:layout_constraintStart_toStartOf="@+id/imgCourse2"
+                            app:layout_constraintTop_toBottomOf="@+id/txtTitleC2" />
+
+                        <TextView
+                            android:id="@+id/txtTitleC2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="React JS"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            app:layout_constraintStart_toStartOf="@+id/imgCourse2"
+                            app:layout_constraintTop_toBottomOf="@+id/lblOngoingC2" />
+
+                        <TextView
+                            android:id="@+id/lblOngoingC2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/poppins"
+                            android:text="Ongoing"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="@+id/imgCourse2"
+                            app:layout_constraintTop_toTopOf="@+id/imgCourse2" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutC_Course3"
+                        android:layout_width="360dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imgCourse3"
+                            android:layout_width="317dp"
+                            android:layout_height="151dp"
+                            android:layout_marginStart="21dp"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/course_cisco" />
+
+                        <Button
+                            android:id="@+id/btnCourse3"
+                            android:layout_width="87dp"
+                            android:layout_height="29dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="115dp"
+                            android:width="300dp"
+                            android:background="@drawable/btn_course_css"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:padding="0dp"
+                            android:paddingStart="0dp"
+                            android:paddingLeft="0dp"
+                            android:paddingTop="0dp"
+                            android:paddingEnd="0dp"
+                            android:paddingRight="0dp"
+                            android:paddingBottom="0dp"
+                            android:text="Continue"
+                            android:textAllCaps="false"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp"
+                            app:backgroundTint="@null"
+                            app:layout_constraintStart_toStartOf="@+id/imgCourse3"
+                            app:layout_constraintTop_toTopOf="@+id/imgCourse3" />
+
+                        <TextView
+                            android:id="@+id/lblLessonsC3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:text="1/51 Lessons"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp"
+                            app:layout_constraintStart_toStartOf="@+id/imgCourse3"
+                            app:layout_constraintTop_toBottomOf="@+id/txtTitleC3" />
+
+                        <TextView
+                            android:id="@+id/txtTitleC3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="CISCO Packet Tracer"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            app:layout_constraintStart_toStartOf="@+id/imgCourse3"
+                            app:layout_constraintTop_toBottomOf="@+id/lblOngoingC3" />
+
+                        <TextView
+                            android:id="@+id/lblOngoingC3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/poppins"
+                            android:text="Ongoing"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="@+id/imgCourse3"
+                            app:layout_constraintTop_toTopOf="@+id/imgCourse3" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/lblExploreCourses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Explore your courses"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scrlEnrolledCourses" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="40dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/btn_color"
+                android:fontFamily="@font/poppins_semibold"
+                android:padding="0dp"
+                android:paddingStart="0dp"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingEnd="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp"
+                android:text="All"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                app:backgroundTint="#2778F0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblExploreCourses" />
+
+            <TextView
+                android:id="@+id/lblNewestCourses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="180dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Newest"
+                android:textColor="#9A9A9A"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblExploreCourses" />
+
+            <TextView
+                android:id="@+id/lblPopularCourses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Popular"
+                android:textColor="#9A9A9A"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblExploreCourses" />
+
+            <ImageButton
+                android:id="@+id/btnCloudC"
+                android:layout_width="147dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_image_course_css"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblPopularCourses"
+                app:srcCompat="@drawable/course_cloud" />
+
+            <TextView
+                android:id="@+id/lblCloudC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="38dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="Cloud"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@+id/btnCloudC"
+                app:layout_constraintTop_toTopOf="@+id/btnCloudC" />
+
+            <TextView
+                android:id="@+id/lblCloud_LessonC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="55dp"
+                android:text="24/52 Lessons"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@+id/btnCloudC"
+                app:layout_constraintTop_toTopOf="@+id/btnCloudC" />
+
+            <ImageButton
+                android:id="@+id/btnHTMLC"
+                android:layout_width="147dp"
+                android:layout_height="75dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/btn_image_course_css"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblPopularCourses"
+                app:srcCompat="@drawable/course_html" />
+
+            <TextView
+                android:id="@+id/lblHTMLC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="38dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="HTML5"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@+id/btnHTMLC"
+                app:layout_constraintTop_toTopOf="@+id/btnHTMLC" />
+
+            <TextView
+                android:id="@+id/lblHTML_LessonC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="55dp"
+                android:text="6/24 Lessons"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@+id/btnHTMLC"
+                app:layout_constraintTop_toTopOf="@+id/btnHTMLC" />
+
+            <ImageButton
+                android:id="@+id/btnUIC"
+                android:layout_width="147dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="105dp"
+                android:background="@drawable/btn_image_course_css"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblPopularCourses"
+                app:srcCompat="@drawable/course_ui" />
+
+            <TextView
+                android:id="@+id/lblUI_LessonC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="55dp"
+                android:text="14/34 Lessons"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@+id/btnUIC"
+                app:layout_constraintTop_toTopOf="@+id/btnUIC" />
+
+            <TextView
+                android:id="@+id/lblUI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="38dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="User Interface"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@+id/btnUIC"
+                app:layout_constraintTop_toTopOf="@+id/btnUIC" />
+
+            <ImageButton
+                android:id="@+id/btnDatabaseC"
+                android:layout_width="147dp"
+                android:layout_height="75dp"
+                android:layout_marginTop="105dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/btn_image_course_css"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblPopularCourses"
+                app:srcCompat="@drawable/course_db" />
+
+            <TextView
+                android:id="@+id/lblDatabase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="38dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="Database"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@+id/btnDatabaseC"
+                app:layout_constraintTop_toTopOf="@+id/btnDatabaseC" />
+
+            <TextView
+                android:id="@+id/lblDatabase_LessonC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="55dp"
+                android:text="24/30 Lessons"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@+id/btnDatabaseC"
+                app:layout_constraintTop_toTopOf="@+id/btnDatabaseC" />
+
+            <ImageButton
+                android:id="@+id/btnJSC"
+                android:layout_width="147dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="195dp"
+                android:background="@drawable/btn_image_course_css"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblPopularCourses"
+                app:srcCompat="@drawable/course_js" />
+
+            <TextView
+                android:id="@+id/lblJS_LessonC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="55dp"
+                android:text="3/49 Lessons"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@+id/btnJSC"
+                app:layout_constraintTop_toTopOf="@+id/btnJSC" />
+
+            <TextView
+                android:id="@+id/lblJS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="38dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="JavaScript"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@+id/btnJSC"
+                app:layout_constraintTop_toTopOf="@+id/btnJSC" />
+
+            <ImageButton
+                android:id="@+id/btnCSS3C"
+                android:layout_width="147dp"
+                android:layout_height="75dp"
+                android:layout_marginTop="195dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/btn_image_course_css"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblPopularCourses"
+                app:srcCompat="@drawable/course_css" />
+
+            <TextView
+                android:id="@+id/lblCSS_LessonC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="55dp"
+                android:text="24/52 Lessons"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@+id/btnCSS3C"
+                app:layout_constraintTop_toTopOf="@+id/btnCSS3C" />
+
+            <TextView
+                android:id="@+id/lblCSS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="38dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="CSS3"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@+id/btnCSS3C"
+                app:layout_constraintTop_toTopOf="@+id/btnCSS3C" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
